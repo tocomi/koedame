@@ -13,12 +13,18 @@
         v-btn(@click="onClick()" color="info") hoge
 
       v-flex(mb-5 xs12)
+        Tweet
 </template>
 
 <script lang="ts">
-  import {Component, Prop, Vue} from "vue-property-decorator";
+  import {Component, Vue} from "vue-property-decorator"
+  import Tweet from '../components/Tweet'
   
-  @Component
+  @Component({
+    components: {
+      Tweet,
+    },
+  })
   export default class Index extends Vue {
 
     message: string = 'Hello!'
