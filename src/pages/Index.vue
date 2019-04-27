@@ -10,15 +10,22 @@
         )
 
       v-flex(mb-4)
+        v-btn(@click="onClick()" color="info") hoge
 
       v-flex(mb-5 xs12)
 </template>
 
-<script>
-  export default {
-    data: () => ({
-      
-    })
+<script lang="ts">
+  import {Component, Prop, Vue} from "vue-property-decorator";
+  
+  @Component
+  export default class Index extends Vue {
+
+    message: string = 'Hello!'
+
+    onClick(): void {
+      window.alert(this.message)
+    }
   }
 </script>
 
