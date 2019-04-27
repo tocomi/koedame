@@ -16,18 +16,18 @@
     </v-toolbar>
 
     <v-content>
-      <HelloWorld/>
+      <Index/>
     </v-content>
   </v-app>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld'
+import Index from './pages/Index'
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    Index,
   },
   data () {
     return {
