@@ -18,7 +18,7 @@
 
 <script lang="ts">
   import {Component, Vue} from "vue-property-decorator"
-  import Tweet from '../components/Tweet'
+  import Tweet from '../components/Tweet.vue'
   
   @Component({
     components: {
