@@ -13,7 +13,7 @@
         v-btn(@click="onClick()" color="info") hoge
 
       v-flex(mb-5 xs12)
-        Tweet
+        Tweet(v-for="tweet in tweets" :tweet="tweet" key="tweet.content")
 </template>
 
 <script lang="ts">
@@ -28,6 +28,16 @@
   export default class Index extends Vue {
 
     message: string = 'Hello!'
+    tweets: Array<Object> = [
+      {
+        user: '夏目漱石',
+        content: '今度1000円札に載ることになった！！',
+      },
+      {
+        user: '福沢諭吉',
+        content: 'ちょっくら大学作ってくる',
+      }
+    ]
 
     onClick(): void {
       window.alert(this.message)

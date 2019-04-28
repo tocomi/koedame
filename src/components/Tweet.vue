@@ -1,5 +1,7 @@
 <template lang="pug">
-  v-avatar
+  v-card.tweet-card
+    p {{ tweet.user }}
+    p {{ tweet.content }}
 </template>
 
 <script lang="ts">
@@ -8,9 +10,12 @@
   @Component
   export default class Tweet extends Vue {
 
+    @Prop() tweet!: Object
+    
   }
 </script>
 
 <style lang="scss" scoped>
-
+.tweet-card {
+}
 </style>
