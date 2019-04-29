@@ -31,10 +31,17 @@
       {
         user: '夏目漱石',
         content: '今度1000円札に載ることになった！！',
+        createdAt: '21:05',
       },
       {
         user: '福沢諭吉',
         content: 'ちょっくら大学作ってくる',
+        createdAt: '21:04',
+      },
+      {
+        user: '卑弥呼',
+        content: 'うぇｗｗｗｗｗｗｗｗｗｗｗｗｗｗｗｗｗｗｗｗｗｗｗｗｗｗｗｗｗｗｗｗｗｗｗｗｗｗｗｗｗｗｗｗｗｗｗｗｗｗｗｗｗｗｗｗｗｗｗｗｗｗｗｗ',
+        createdAt: '21:03',
       }
     ]
 
@@ -44,9 +51,10 @@
           {
             user: 'hoge',
             content: 'fuga',
+            createdAt: '21:06',
           }
         )
-        if (this.tweets.length > 3) {
+        if (this.tweets.length > 5) {
           this.tweets.pop()
         }
       }, 2000)

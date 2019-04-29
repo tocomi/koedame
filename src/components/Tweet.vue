@@ -2,8 +2,10 @@
   v-card.card(flat)
     v-avatar.avatar
       v-img(:src="`http://domonet.jp/plus/images/post/201805/thum-20180529093519.jpg`" alt="avatar")
-    p.user {{ tweet.user }}
-    p.content {{ tweet.content }}
+    div.user-and-time
+      span.user {{ tweet.user }}
+      span.created_at {{ tweet.createdAt }}
+    span.content {{ tweet.content }}
 </template>
 
 <script lang="ts">
@@ -20,20 +22,27 @@
 <style lang="scss" scoped>
 .card {
   text-align: left;
-  height: 80px;
+  min-height: 70px;
   border-bottom: 1px solid #EEEEEE;
   .avatar {
     position: absolute;
     margin: 10px 0 0 10px;
   }
-  .user {
-    position: absolute;
-    margin: 10px 0 0 70px;
-    font-weight: bold;
+  .user-and-time {
+    padding: 10px 0 0 70px;
+    font-size: 12px;
+    .user {
+      font-weight: bold;
+    }
+    .created_at {
+      margin: 0 0 0 10px;
+      color: #8A8A8A;
+    }
   }
   .content {
-    position: absolute;
-    margin: 30px 0 0 70px;
+    display: block;
+    padding: 0 5px 5px 70px;
+    font-size: 13px;
   }
 }
 </style>
