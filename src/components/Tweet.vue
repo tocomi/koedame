@@ -41,7 +41,7 @@
   }
   .content {
     display: block;
-    padding: 0 5px 5px 70px;
+    padding: 0 10px 10px 70px;
     font-size: 13px;
   }
 }
