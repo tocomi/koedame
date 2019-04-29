@@ -1,5 +1,5 @@
 <template lang="pug">
-  v-card.card(flat)
+  v-card.card(flat :class="tweet.self ? 'self' : ''")
     v-avatar.avatar
       v-img(:src="`http://domonet.jp/plus/images/post/201805/thum-20180529093519.jpg`" alt="avatar")
     div.user-and-time
@@ -36,6 +36,9 @@
   text-align: left;
   min-height: 70px;
   border-bottom: 1px solid #EEEEEE;
+  &.self {
+    background-color: #FAFAEA;
+  }
   .avatar {
     position: absolute;
     margin: 10px 0 0 10px;

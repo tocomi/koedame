@@ -9,10 +9,10 @@
           height="200"
         )
 
-      v-flex(mb-4)
+      v-flex(xs12)
         v-btn(@click="onClick()" color="info") Random Add
 
-      v-flex(mb-5 xs12)
+      v-flex(xs12)
         Tweet(v-for="tweet in tweets" :tweet="tweet" :key="tweet.content")
 </template>
 
@@ -33,6 +33,7 @@
         content: '今度1000円札に載ることになった！！',
         favorite: 22456,
         share: 12980,
+        self: false,
         createdAt: '21:05',
       },
       {
@@ -40,6 +41,7 @@
         content: 'ちょっくら大学作ってくる',
         favorite: 1423,
         share: 643,
+        self: false,
         createdAt: '21:04',
       },
       {
@@ -47,6 +49,7 @@
         content: 'うぇｗｗｗｗｗｗｗｗｗｗｗｗｗｗｗｗｗｗｗｗｗｗｗｗｗｗｗｗｗｗｗｗｗｗｗｗｗｗｗｗｗｗｗｗｗｗｗｗｗｗｗｗｗｗｗｗｗｗｗｗｗｗｗｗ',
         favorite: 0,
         share: 0,
+        self: true,
         createdAt: '21:03',
       }
     ]
@@ -59,6 +62,7 @@
             content: 'fuga',
             favorite: 0,
             share: 0,
+            self: false,
             createdAt: '21:06',
           }
         )
