@@ -6,6 +6,11 @@
       span.user {{ tweet.user }}
       span.created_at {{ tweet.createdAt }}
     span.content {{ tweet.content }}
+    div.status
+      v-icon.favorite-icon(color="red" small) favorite
+      span.favorite {{ tweet.favorite }}
+      v-icon.share-icon(color="green" small) repeat
+      span.share {{ tweet.share }}
 </template>
 
 <script lang="ts">
@@ -41,8 +46,19 @@
   }
   .content {
     display: block;
-    padding: 0 10px 10px 70px;
+    padding: 0 10px 5px 70px;
     font-size: 13px;
+  }
+  .status {
+    padding: 0 0 5px 70px;
+    .share-icon {
+      margin: 0 0 0 10px;
+    }
+    .favorite, .share {
+      margin: 0 0 0 5px;
+      color: #4A4A4A;
+      font-size: 12px;
+    }
   }
 }
 </style>

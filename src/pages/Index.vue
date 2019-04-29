@@ -31,16 +31,22 @@
       {
         user: '夏目漱石',
         content: '今度1000円札に載ることになった！！',
+        favorite: 22456,
+        share: 12980,
         createdAt: '21:05',
       },
       {
         user: '福沢諭吉',
         content: 'ちょっくら大学作ってくる',
+        favorite: 1423,
+        share: 643,
         createdAt: '21:04',
       },
       {
         user: '卑弥呼',
         content: 'うぇｗｗｗｗｗｗｗｗｗｗｗｗｗｗｗｗｗｗｗｗｗｗｗｗｗｗｗｗｗｗｗｗｗｗｗｗｗｗｗｗｗｗｗｗｗｗｗｗｗｗｗｗｗｗｗｗｗｗｗｗｗｗｗｗ',
+        favorite: 0,
+        share: 0,
         createdAt: '21:03',
       }
     ]
@@ -51,13 +57,15 @@
           {
             user: 'hoge',
             content: 'fuga',
+            favorite: 0,
+            share: 0,
             createdAt: '21:06',
           }
         )
         if (this.tweets.length > 5) {
           this.tweets.pop()
         }
-      }, 2000)
+      }, 3000)
     }
   }
 </script>
