@@ -11,6 +11,8 @@
 
       v-flex(xs12)
         v-btn(@click="onClick()" color="info") Random Add
+        br
+        Post
 
       v-flex(xs12)
         Tweet(v-for="tweet in tweets" :tweet="tweet" :key="tweet.content")
@@ -19,10 +21,12 @@
 <script lang="ts">
   import { Component, Vue } from "vue-property-decorator"
   import Tweet from '../components/Tweet.vue'
+  import Post from '../components/Post.vue'
   
   @Component({
     components: {
       Tweet,
+      Post,
     },
   })
   export default class Index extends Vue {
