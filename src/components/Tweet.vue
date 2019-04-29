@@ -7,9 +7,9 @@
       span.created_at {{ tweet.createdAt }}
     span.content {{ tweet.content }}
     div.status
-      v-icon.favorite-icon(color="red" small) favorite
+      v-icon.favorite-icon(color="red" small @click="favorite()") favorite
       span.favorite {{ tweet.favorite }}
-      v-icon.share-icon(color="green" small) repeat
+      v-icon.share-icon(color="green" small @click="share()") repeat
       span.share {{ tweet.share }}
 </template>
 
@@ -21,6 +21,13 @@
 
     @Prop() tweet!: Object
     
+    favorite() {
+      this.tweet.favorite += 1
+    }
+
+    share() {
+      this.tweet.share += 1
+    }
   }
 </script>
 
