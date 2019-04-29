@@ -13,7 +13,7 @@
         v-btn(@click="onClick()" color="info") Random Add
 
       v-flex(mb-5 xs12)
-        Tweet(v-for="tweet in tweets" :tweet="tweet" key="tweet.content")
+        Tweet(v-for="tweet in tweets" :tweet="tweet" :key="tweet.content")
 </template>
 
 <script lang="ts">
