@@ -10,7 +10,7 @@
         )
 
       v-flex(mb-4)
-        v-btn(@click="onClick()" color="info") hoge
+        v-btn(@click="onClick()" color="info") Random Add
 
       v-flex(mb-5 xs12)
         Tweet(v-for="tweet in tweets" :tweet="tweet" key="tweet.content")
@@ -27,7 +27,6 @@
   })
   export default class Index extends Vue {
 
-    message: string = 'Hello!'
     tweets: Array<Object> = [
       {
         user: '夏目漱石',
@@ -40,7 +39,14 @@
     ]
 
     onClick(): void {
-      window.alert(this.message)
+      setInterval(() => {
+        this.tweets.unshift(
+          {
+            user: 'hoge',
+            content: 'fuga',
+          }
+        )
+      }, 1000)
     }
   }
 </script>
