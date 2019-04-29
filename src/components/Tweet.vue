@@ -1,6 +1,6 @@
 <template lang="pug">
   v-card.tweet-card
-    v-avatar.tweet-avatar(:size="avatarSize")
+    v-avatar.tweet-avatar
       v-img(:src="`http://domonet.jp/plus/images/post/201805/thum-20180529093519.jpg`" alt="avatar")
     p {{ tweet.user }}
     p {{ tweet.content }}

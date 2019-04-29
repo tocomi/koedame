@@ -17,7 +17,7 @@
 </template>
 
 <script lang="ts">
-  import {Component, Vue} from "vue-property-decorator"
+  import { Component, Vue } from "vue-property-decorator"
   import Tweet from '../components/Tweet.vue'
   
   @Component({
@@ -46,11 +46,13 @@
             content: 'fuga',
           }
         )
-      }, 1000)
+        if (this.tweets.length > 3) {
+          this.tweets.pop()
+        }
+      }, 2000)
     }
   }
 </script>
 
 <style lang="scss" scoped>
-
 </style>
