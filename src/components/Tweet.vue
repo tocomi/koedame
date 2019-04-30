@@ -45,7 +45,6 @@
   }
   .user-and-time {
     padding: 10px 0 0 70px;
-    font-size: 12px;
     .user {
       font-weight: bold;
     }
@@ -57,7 +56,6 @@
   .content {
     display: block;
     padding: 0 10px 5px 70px;
-    font-size: 13px;
   }
   .status {
     padding: 0 0 5px 70px;
