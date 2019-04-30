@@ -1,9 +1,9 @@
 <template lang="pug">
   div#post
     div#user-area
-      input#user(v-model="user" placeholder="お名前")
+      input#user.input(v-model="user" placeholder="お名前")
     div#content-area
-      textarea#content(v-model="content" placeholder="なんでもどうぞ")
+      textarea#content.input(v-model="content" placeholder="なんでもどうぞ")
       v-btn#submit(color="info" @click="postTweet()" fab small)
         v-icon(color="white") create
 </template>
@@ -38,26 +38,21 @@
 </script>
 
 <style lang="scss" scoped>
-#user {
+.input {
   width: 300px;
   padding: 5px;
   border: 1px solid #EAEAEA;
   border-radius: 10px;
   background-color: #FFF;
+  font-size: 16px;
 }
 #content {
   resize: none;
-  height: 95px;
-  width: 300px;
+  height: 120px;
   margin: 2px 0 0 0;
-  padding: 5px;
-  background-color: #FFF;
-  border: 1px solid #EAEAEA;
-  border-radius: 10px;
-  font-size: 13px;
 }
 #submit {
   position: absolute;
-  margin: 50px 0 0 -45px;
+  margin: 75px 0 0 -45px;
 }
 </style>
