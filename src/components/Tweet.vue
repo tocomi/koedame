@@ -37,7 +37,7 @@
   min-height: 70px;
   border-bottom: 1px solid #EEEEEE;
   &.self {
-    background-color: #FAFAEA;
+    background-color: #FFFFF5;
   }
   .avatar {
     position: absolute;
