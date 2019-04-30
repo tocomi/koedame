@@ -19,8 +19,18 @@
   @Component
   export default class Tweet extends Vue {
 
-    @Prop() tweet!: Object
-    
+    @Prop() tweet!: any
+
+    created() {
+      setInterval(() => {
+        if (!this.tweet.self) {
+          return
+        }
+        this.tweet.favorite += 10
+        this.tweet.share += 10
+      }, 500)
+    }
+
     favorite() {
       this.tweet.favorite += 1
     }

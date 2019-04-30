@@ -83,7 +83,7 @@
       return this.addZeroForDate(current.getHours()) + ':' + this.addZeroForDate(current.getMinutes()) + ':' + this.addZeroForDate(current.getSeconds())
     }
 
-    private addZeroForDate = (number) => {
+    private addZeroForDate(number: number): string{
       return ('00' + number).slice(-2)
     }
 
