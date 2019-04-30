@@ -1,7 +1,7 @@
 <template lang="pug">
   div#post
-    textarea.content
-    v-btn#submit(color="info")
+    textarea#content(placeholder="思いの丈を、ぶちまけろ")
+    v-btn#submit(color="info" fab small)
       v-icon(color="white") create
 </template>
 
@@ -15,9 +15,10 @@
 </script>
 
 <style lang="scss" scoped>
-.content {
+#content {
+  resize: none;
   height: 70px;
-  width: 250px;
+  width: 290px;
   padding: 5px;
   background-color: #FFF;
   border: 1px solid #EAEAEA;
