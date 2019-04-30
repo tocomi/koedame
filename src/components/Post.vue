@@ -9,7 +9,7 @@
   import { Component, Prop, Vue } from "vue-property-decorator";
   
   @Component
-  export default class Tweet extends Vue {
+  export default class Post extends Vue {
 
   }
 </script>
