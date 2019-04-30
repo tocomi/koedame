@@ -24,6 +24,6 @@
   border: 1px solid #EAEAEA;
 }
 #submit {
-  margin: -30px 0 0 10px;
+  margin: -30px 0 5px 10px;
 }
 </style>
