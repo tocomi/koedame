@@ -22,7 +22,7 @@
         return
       }
 
-      this.$emit('postTweet', this.postUser(), this.content)
+      this.$emit('postTweet', this.postUser(), this.content, true)
 
       this.content = ''
     }

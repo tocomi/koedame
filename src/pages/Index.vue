@@ -53,19 +53,19 @@
         content: 'うぇｗｗｗｗｗｗｗｗｗｗｗｗｗｗｗｗｗｗｗｗｗｗｗｗｗｗｗｗｗｗｗｗｗｗｗｗｗｗｗｗｗｗｗｗｗｗｗｗｗｗｗｗｗｗｗｗｗｗｗｗｗｗｗｗ',
         favorite: 0,
         share: 0,
-        self: true,
+        self: false,
         createdAt: '21:03:55',
       }
     ]
 
-    postTweet(user, content): void {
+    postTweet(user: string, content: string, self: boolean): void {
       this.tweets.unshift(
         {
           user: user,
           content: content,
           favorite: 0,
           share: 0,
-          self: true,
+          self: self,
           createdAt: this.makeCurrentTimeString(),
         }
       )
@@ -89,16 +89,7 @@
 
     tweetRandom(): void {
       setInterval(() => {
-        this.tweets.unshift(
-          {
-            user: 'hoge',
-            content: 'fuga',
-            favorite: 0,
-            share: 0,
-            self: false,
-            createdAt: this.makeCurrentTimeString(),
-          }
-        )
+        this.postTweet('hoge', 'fuga', false)
         this.deleteOldData()
       }, 3000)
     }
