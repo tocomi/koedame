@@ -10,7 +10,7 @@
         )
 
       v-flex(xs12)
-        v-btn(@click="onClick()" color="info") Random Add
+        v-btn(@click="tweetRandom()" color="info") Random Add
         br
         Post
 
@@ -58,7 +58,7 @@
       }
     ]
 
-    onClick(): void {
+    tweetRandom(): void {
       setInterval(() => {
         this.tweets.unshift(
           {
@@ -70,11 +70,16 @@
             createdAt: '21:06',
           }
         )
-        if (this.tweets.length > 5) {
-          this.tweets.pop()
-        }
+        this.deleteOldData()
       }, 3000)
     }
+
+    deleteOldData(): void {
+      if (this.tweets.length > 5) {
+        this.tweets.pop()
+      }
+    }
+
   }
 </script>
 

@@ -17,8 +17,8 @@
 <style lang="scss" scoped>
 #content {
   resize: none;
-  height: 70px;
-  width: 290px;
+  height: 95px;
+  width: 270px;
   padding: 5px;
   background-color: #FFF;
   border: 1px solid #EAEAEA;
