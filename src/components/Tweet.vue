@@ -26,9 +26,9 @@
         if (!this.tweet.self) {
           return
         }
-        this.tweet.favorite += 10
-        this.tweet.share += 10
-      }, 500)
+        this.tweet.favorite += Math.floor(Math.random() * Math.floor(5))
+        this.tweet.share += Math.floor(Math.random() * Math.floor(3))
+      }, 100)
     }
 
     favorite() {
