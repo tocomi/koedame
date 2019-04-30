@@ -15,7 +15,7 @@
         Post(@postTweet="postTweet")
 
       v-flex(xs12)
-        Tweet(v-for="tweet in tweets" :tweet="tweet" :key="tweet.content")
+        Tweet(v-for="tweet in tweets" :tweet="tweet" :key="tweet.createdAt")
 </template>
 
 <script lang="ts">
@@ -38,7 +38,7 @@
         favorite: 22456,
         share: 12980,
         self: false,
-        createdAt: '21:05',
+        createdAt: '21:05:12',
       },
       {
         user: '福沢諭吉',
@@ -46,7 +46,7 @@
         favorite: 1423,
         share: 643,
         self: false,
-        createdAt: '21:04',
+        createdAt: '21:04:52',
       },
       {
         user: '卑弥呼',
@@ -54,7 +54,7 @@
         favorite: 0,
         share: 0,
         self: true,
-        createdAt: '21:03',
+        createdAt: '21:03:55',
       }
     ]
 
@@ -72,14 +72,19 @@
       this.deleteOldData()
     }
 
-    deleteOldData(): void {
+    private deleteOldData(): void {
       if (this.tweets.length > 5) {
         this.tweets.pop()
       }
     }
 
-    makeCurrentTimeString(): string {
-      return '21:06'
+    private makeCurrentTimeString(): string {
+      const current: Date = new Date()
+      return this.addZeroForDate(current.getHours()) + ':' + this.addZeroForDate(current.getMinutes()) + ':' + this.addZeroForDate(current.getSeconds())
+    }
+
+    private addZeroForDate = (number) => {
+      return ('00' + number).slice(-2)
     }
 
     tweetRandom(): void {
@@ -91,7 +96,7 @@
             favorite: 0,
             share: 0,
             self: false,
-            createdAt: '21:06',
+            createdAt: this.makeCurrentTimeString(),
           }
         )
         this.deleteOldData()
