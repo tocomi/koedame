@@ -12,7 +12,7 @@
       v-flex(xs12)
         v-btn(@click="tweetRandom()" color="info") Random Add
         br
-        Post
+        Post(@postTweet="postTweet")
 
       v-flex(xs12)
         Tweet(v-for="tweet in tweets" :tweet="tweet" :key="tweet.content")
@@ -58,6 +58,30 @@
       }
     ]
 
+    postTweet(user, content): void {
+      this.tweets.unshift(
+        {
+          user: user,
+          content: content,
+          favorite: 0,
+          share: 0,
+          self: true,
+          createdAt: this.makeCurrentTimeString(),
+        }
+      )
+      this.deleteOldData()
+    }
+
+    deleteOldData(): void {
+      if (this.tweets.length > 5) {
+        this.tweets.pop()
+      }
+    }
+
+    makeCurrentTimeString(): string {
+      return '21:06'
+    }
+
     tweetRandom(): void {
       setInterval(() => {
         this.tweets.unshift(
@@ -74,11 +98,6 @@
       }, 3000)
     }
 
-    deleteOldData(): void {
-      if (this.tweets.length > 5) {
-        this.tweets.pop()
-      }
-    }
 
   }
 </script>

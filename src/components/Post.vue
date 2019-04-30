@@ -1,7 +1,7 @@
 <template lang="pug">
   div#post
     textarea#content(placeholder="思いの丈を、ぶちまけろ")
-    v-btn#submit(color="info" fab small)
+    v-btn#submit(color="info" @click="postTweet()" fab small)
       v-icon(color="white") create
 </template>
 
@@ -10,6 +10,12 @@
   
   @Component
   export default class Post extends Vue {
+
+    postTweet(): void {
+      const user: string = 'hogehoge'
+      const content: string = 'fugafuga'
+      this.$emit('postTweet', user, content)
+    }
 
   }
 </script>
