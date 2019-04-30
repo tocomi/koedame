@@ -1,8 +1,9 @@
 <template lang="pug">
   div#post
-    textarea#content(v-model="content" placeholder="思いの丈を、ぶちまけろ")
-    v-btn#submit(color="info" @click="postTweet()" fab small)
-      v-icon(color="white") create
+    div#content-area
+      textarea#content(v-model="content" placeholder="思いの丈を、ぶちまけろ")
+      v-btn#submit(color="info" @click="postTweet()" fab small)
+        v-icon(color="white") create
 </template>
 
 <script lang="ts">
@@ -30,12 +31,14 @@
 #content {
   resize: none;
   height: 95px;
-  width: 270px;
+  width: 300px;
   padding: 5px;
   background-color: #FFF;
   border: 1px solid #EAEAEA;
+  font-size: 13px;
 }
 #submit {
-  margin: -30px 0 5px 10px;
+  position: absolute;
+  margin: 50px 0 0 -45px;
 }
 </style>
