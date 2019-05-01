@@ -5,13 +5,13 @@
         <span>koedame</span>
       </v-toolbar-title>
       <v-spacer></v-spacer>
-      <v-btn
+      <!-- <v-btn
         flat
         href="https://twitter.com/tocomi0112"
         target="_blank"
-      >
+      > -->
         <span class="mr-2">@tocomi</span>
-      </v-btn>
+      <!-- </v-btn> -->
     </v-toolbar>
 
     <v-content>
