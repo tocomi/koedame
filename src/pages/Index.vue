@@ -12,7 +12,7 @@
       v-flex(xs12)
         v-btn(@click="tweetRandom()" color="info") Random Add
         br
-        Post(@postTweet="postTweet")
+        Post(@postTweet="post")
 
       v-flex(xs12)
         Tweet(v-for="tweet in tweets" :tweet="tweet" :key="tweet.createdAt")
@@ -44,7 +44,12 @@
       })
     }
 
-    postTweet(user: string, content: string, self: boolean): void {
+    post(user: string, content: string, self: boolean): void {
+      this.postTweet(user, content, self)
+      this.deleteOldData()
+    }
+
+    private postTweet(user: string, content: string, self: boolean): void {
       this.tweets.unshift(
         {
           user: user,
@@ -56,11 +61,10 @@
           createdAt: this.makeCurrentTimeString(),
         }
       )
-      this.deleteOldData()
     }
 
     private deleteOldData(): void {
-      if (this.tweets.length > 5) {
+      if (this.tweets.length > 10) {
         this.tweets.pop()
       }
     }
