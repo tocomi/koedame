@@ -15,7 +15,7 @@
         Post(@postTweet="post")
 
       v-flex(xs12)
-        Tweet(v-for="tweet in tweets" :tweet="tweet" :key="tweet.createdAt")
+        Tweet(v-for="tweet in tweets" :tweet="tweet" :key="tweet.content + tweet.createdAt")
 </template>
 
 <script lang="ts">
@@ -40,27 +40,30 @@
 
     mounted(): void {
       this.initialMessage.forEach((message) => {
-        this.postTweet('tutorial', message, false)
+        this.postTweet(this.makeTweet('tutorial', message, false))
       })
     }
 
     post(user: string, content: string, self: boolean): void {
-      this.postTweet(user, content, self)
+      const tweet = this.makeTweet(user, content, self)
+      this.postTweet(tweet)
       this.deleteOldData()
     }
 
-    private postTweet(user: string, content: string, self: boolean): void {
-      this.tweets.unshift(
-        {
-          user: user,
-          image: `http://domonet.jp/plus/images/post/201805/thum-20180529093519.jpg`,
-          content: content,
-          favorite: 0,
-          share: 0,
-          self: self,
-          createdAt: this.makeCurrentTimeString(),
-        }
-      )
+    private makeTweet(user: string, content: string, self: boolean): Object {
+      return {
+        user: user,
+        image: `http://domonet.jp/plus/images/post/201805/thum-20180529093519.jpg`,
+        content: content,
+        favorite: 0,
+        share: 0,
+        self: self,
+        createdAt: this.makeCurrentTimeString(),
+      }
+    }
+
+    private postTweet(tweet: Object): void {
+      this.tweets.unshift(tweet)
     }
 
     private deleteOldData(): void {
@@ -80,7 +83,7 @@
 
     tweetRandom(): void {
       setInterval(() => {
-        this.postTweet('hoge', 'fuga', false)
+        this.postTweet(this.makeTweet('hoge', 'fuga', false))
         this.deleteOldData()
       }, 3000)
     }
