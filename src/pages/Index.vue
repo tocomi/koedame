@@ -31,37 +31,24 @@
   })
   export default class Index extends Vue {
 
-    tweets: Array<Object> = [
-      {
-        user: 'tutorial',
-        content: '適当に書き込みましょう',
-        favorite: 22456,
-        share: 12980,
-        self: false,
-        createdAt: '21:05:12',
-      },
-      {
-        user: 'tutorial',
-        content: 'ネットには公開されないので何でも書いて大丈夫です',
-        favorite: 1423,
-        share: 643,
-        self: false,
-        createdAt: '21:04:52',
-      },
-      {
-        user: 'tutorial',
-        content: '勝手に周りが盛り上がってくれます',
-        favorite: 0,
-        share: 0,
-        self: false,
-        createdAt: '21:03:55',
-      }
+    tweets: Array<Object> = []
+    initialMessage: Array<string> = [
+      '勝手に周りが盛り上がってくれます',
+      'ネットには公開されないので何でも書いて大丈夫です',
+      '適当に書き込みましょう',
     ]
+
+    mounted(): void {
+      this.initialMessage.forEach((message) => {
+        this.postTweet('tutorial', message, false)
+      })
+    }
 
     postTweet(user: string, content: string, self: boolean): void {
       this.tweets.unshift(
         {
           user: user,
+          image: `http://domonet.jp/plus/images/post/201805/thum-20180529093519.jpg`,
           content: content,
           favorite: 0,
           share: 0,
