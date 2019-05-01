@@ -18,4 +18,17 @@
 </script>
 
 <style lang="scss" scoped>
+.retweet {
+  margin: 0 5px 5px 60px;
+  padding: 5px 10px;
+  border: 1px solid #EEEEEE;
+  border-radius: 10px;
+  .user {
+    font-weight: bold;
+  }
+  .created_at {
+    margin: 0 0 0 10px;
+    color: #8A8A8A;
+  }
+}
 </style>
