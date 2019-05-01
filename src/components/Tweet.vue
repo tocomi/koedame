@@ -22,12 +22,19 @@
     @Prop() tweet!: any
 
     created() {
-      setInterval(() => {
+      let loopCount = 0
+      const timerId: number = setInterval(() => {
         if (!this.tweet.self) {
           return
         }
-        this.tweet.favorite += Math.floor(Math.random() * Math.floor(5))
-        this.tweet.share += Math.floor(Math.random() * Math.floor(3))
+
+        this.tweet.favorite += Math.floor(Math.random() * Math.floor(30))
+        this.tweet.share += Math.floor(Math.random() * Math.floor(15))
+
+        loopCount++
+        if (loopCount > 300) {
+          clearInterval(timerId)
+        }
       }, 100)
     }
 
