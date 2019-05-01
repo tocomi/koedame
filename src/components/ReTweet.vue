@@ -1,9 +1,9 @@
 <template lang="pug">
   div.retweet
     div.user-and-time
-      span.user {{ tweet.user }}
-      span.created_at {{ tweet.createdAt }}
-    span.content {{ tweet.content }}
+      span.user {{ reTweet.user }}
+      span.created_at {{ reTweet.createdAt }}
+    span.content {{ reTweet.content }}
 </template>
 
 <script lang="ts">
@@ -12,7 +12,7 @@
   @Component
   export default class Tweet extends Vue {
 
-    @Prop() tweet!: any
+    @Prop() reTweet!: any
 
   }
 </script>

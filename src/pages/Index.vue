@@ -54,6 +54,15 @@
           share: 0,
           self: self,
           createdAt: this.makeCurrentTimeString(),
+          reTweet: {
+            user: user,
+            image: `http://domonet.jp/plus/images/post/201805/thum-20180529093519.jpg`,
+            content: content,
+            favorite: 0,
+            share: 0,
+            self: self,
+            createdAt: this.makeCurrentTimeString(),
+          }
         }
       )
       this.deleteOldData()

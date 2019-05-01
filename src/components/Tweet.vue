@@ -11,12 +11,18 @@
       span.favorite {{ tweet.favorite }}
       v-icon.share-icon(color="green" small @click="share()") repeat
       span.share {{ tweet.share }}
+    ReTweet(:reTweet="tweet.reTweet" v-if="tweet.reTweet")
 </template>
 
 <script lang="ts">
   import { Component, Prop, Vue } from "vue-property-decorator";
-  
-  @Component
+  import ReTweet from './ReTweet.vue'
+
+  @Component({
+    components: {
+      ReTweet,
+    },
+  })
   export default class Tweet extends Vue {
 
     @Prop() tweet!: any
