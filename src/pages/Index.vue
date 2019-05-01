@@ -33,24 +33,24 @@
 
     tweets: Array<Object> = [
       {
-        user: '夏目漱石',
-        content: '今度1000円札に載ることになった！！',
+        user: 'tutorial',
+        content: '適当に書き込みましょう',
         favorite: 22456,
         share: 12980,
         self: false,
         createdAt: '21:05:12',
       },
       {
-        user: '福沢諭吉',
-        content: 'ちょっくら大学作ってくる',
+        user: 'tutorial',
+        content: 'ネットには公開されないので何でも書いて大丈夫です',
         favorite: 1423,
         share: 643,
         self: false,
         createdAt: '21:04:52',
       },
       {
-        user: '卑弥呼',
-        content: 'うぇｗｗｗｗｗｗｗｗｗｗｗｗｗｗｗｗｗｗｗｗｗｗｗｗｗｗｗｗｗｗｗｗｗｗｗｗｗｗｗｗｗｗｗｗｗｗｗｗｗｗｗｗｗｗｗｗｗｗｗｗｗｗｗｗ',
+        user: 'tutorial',
+        content: '勝手に周りが盛り上がってくれます',
         favorite: 0,
         share: 0,
         self: false,
