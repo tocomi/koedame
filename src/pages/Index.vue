@@ -47,16 +47,31 @@
     post(user: string, content: string, self: boolean): void {
       const tweet = this.makeTweet(user, content, self)
       this.postTweet(tweet)
+      this.setRetweet(tweet)
       this.deleteOldData()
     }
 
-    private makeTweet(user: string, content: string, self: boolean): Object {
+    private setRetweet(reTweet: any): void {
+      let loopCount = 0
+      const timerId: number = setInterval(() => {
+        this.postTweet(this.makeTweet('retweet', 'リツイートです', false, reTweet))
+        this.deleteOldData()
+
+        if (loopCount > 3) {
+          clearInterval(timerId)
+        }
+        loopCount++
+      }, 3000)
+    }
+
+    private makeTweet(user: string, content: string, self: boolean, reTweet: any = null): Object {
       return {
         user: user,
         image: `http://domonet.jp/plus/images/post/201805/thum-20180529093519.jpg`,
         content: content,
         favorite: 0,
         share: 0,
+        reTweet: reTweet,
         self: self,
         createdAt: this.makeCurrentTimeString(),
       }
