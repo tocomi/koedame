@@ -57,10 +57,10 @@
         this.postTweet(this.makeTweet('retweet', 'リツイートです', false, reTweet))
         this.deleteOldData()
 
+        loopCount++
         if (loopCount > 3) {
           clearInterval(timerId)
         }
-        loopCount++
       }, 3000)
     }
 
