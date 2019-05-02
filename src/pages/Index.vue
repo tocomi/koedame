@@ -60,7 +60,7 @@
         this.deleteOldData()
 
         loopCount++
-        if (loopCount > 3) {
+        if (loopCount >= 10) {
           clearInterval(timerId)
         }
       }, 3000)
@@ -84,7 +84,7 @@
     }
 
     private deleteOldData(): void {
-      if (this.tweets.length > 10) {
+      if (this.tweets.length > 50) {
         this.tweets.pop()
       }
     }
