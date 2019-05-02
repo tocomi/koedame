@@ -10,8 +10,6 @@
         )
 
       v-flex(xs12)
-        v-btn(@click="tweetRandom()" color="info") Random Add
-        br
         Post(@postTweet="post")
 
       v-flex(xs12)
