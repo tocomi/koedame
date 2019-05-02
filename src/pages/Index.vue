@@ -20,6 +20,7 @@
 
 <script lang="ts">
   import { Component, Vue } from "vue-property-decorator"
+  import * as users from '../lib/Users'
   import Tweet from '../components/Tweet.vue'
   import Post from '../components/Post.vue'
   
@@ -54,7 +55,7 @@
     private setRetweet(reTweet: any): void {
       let loopCount = 0
       const timerId: number = setInterval(() => {
-        this.postTweet(this.makeTweet('retweet', 'リツイートです', false, reTweet))
+        this.postTweet(this.makeTweet(users.getRandomUser().user, 'リツイートです', false, reTweet))
         this.deleteOldData()
 
         loopCount++
