@@ -40,12 +40,12 @@
 
     mounted(): void {
       this.initialMessage.forEach((message) => {
-        this.postTweet(this.makeTweet('tutorial', message, false))
+        this.postTweet(this.makeTweet('tutorial', '../assets/icon/naoki.jpg', message, false))
       })
     }
 
-    post(user: string, content: string, self: boolean): void {
-      const tweet = this.makeTweet(user, content, self)
+    post(user: string, image: string, content: string, self: boolean): void {
+      const tweet = this.makeTweet(user, image, content, self)
       this.postTweet(tweet)
       this.setRetweet(tweet)
       this.deleteOldData()
@@ -54,7 +54,7 @@
     private setRetweet(reTweet: any): void {
       let loopCount = 0
       const timerId: number = setInterval(() => {
-        this.postTweet(this.makeTweet(users.getRandomUser().user, tweets.getRandomTweet(), false, reTweet))
+        this.postTweet(this.makeTweet(users.getRandomUser().user, users.getRandomUser().image, tweets.getRandomTweet(), false, reTweet))
         this.deleteOldData()
 
         loopCount++
@@ -64,10 +64,10 @@
       }, 3000)
     }
 
-    private makeTweet(user: string, content: string, self: boolean, reTweet: any = null): Object {
+    private makeTweet(user: string, image: string, content: string, self: boolean, reTweet: any = null): Object {
       return {
         user: user,
-        image: `http://domonet.jp/plus/images/post/201805/thum-20180529093519.jpg`,
+        image: image,
         content: content,
         favorite: 0,
         share: 0,
@@ -98,7 +98,7 @@
 
     tweetRandom(): void {
       setInterval(() => {
-        this.postTweet(this.makeTweet('hoge', 'fuga', false))
+        this.postTweet(this.makeTweet('hoge', '../assets/icon/naoki.jpg', 'fuga', false))
         this.deleteOldData()
       }, 3000)
     }

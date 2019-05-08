@@ -1,7 +1,7 @@
 <template lang="pug">
   v-card.card(flat :class="tweet.self ? 'self' : ''")
     v-avatar.avatar
-      v-img(:src="`http://domonet.jp/plus/images/post/201805/thum-20180529093519.jpg`" alt="avatar")
+      v-img(:src="require('../assets/icon/naoki.jpg')" alt="avatar")
     div.user-and-time
       span.user {{ tweet.user }}
       span.created_at {{ tweet.createdAt }}
