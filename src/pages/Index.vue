@@ -40,11 +40,11 @@
 
     mounted(): void {
       this.initialMessage.forEach((message) => {
-        this.postTweet(this.makeTweet('tutorial', '../assets/icon/naoki.jpg', message, false))
+        this.postTweet(this.makeTweet('tutorial', require('../assets/icon/naoki.jpg'), message, false))
       })
     }
 
-    post(user: string, image: string, content: string, self: boolean): void {
+    post(user: string, image: any, content: string, self: boolean): void {
       const tweet = this.makeTweet(user, image, content, self)
       this.postTweet(tweet)
       this.setRetweet(tweet)
@@ -54,7 +54,8 @@
     private setRetweet(reTweet: any): void {
       let loopCount = 0
       const timerId: number = setInterval(() => {
-        this.postTweet(this.makeTweet(users.getRandomUser().user, users.getRandomUser().image, tweets.getRandomTweet(), false, reTweet))
+        const user = users.getRandomUser()
+        this.postTweet(this.makeTweet(user.name, user.image, tweets.getRandomTweet(), false, reTweet))
         this.deleteOldData()
 
         loopCount++
@@ -64,7 +65,7 @@
       }, 3000)
     }
 
-    private makeTweet(user: string, image: string, content: string, self: boolean, reTweet: any = null): Object {
+    private makeTweet(user: string, image: any, content: string, self: boolean, reTweet: any = null): Object {
       return {
         user: user,
         image: image,
@@ -98,7 +99,7 @@
 
     tweetRandom(): void {
       setInterval(() => {
-        this.postTweet(this.makeTweet('hoge', '../assets/icon/naoki.jpg', 'fuga', false))
+        this.postTweet(this.makeTweet('hoge', require('../assets/icon/naoki.jpg'), 'fuga', false))
         this.deleteOldData()
       }, 3000)
     }

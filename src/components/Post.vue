@@ -22,7 +22,7 @@
         return
       }
 
-      this.$emit('postTweet', this.postUser(), '../assets/icon/miura.jpg', this.content, true)
+      this.$emit('postTweet', this.postUser(), require('../assets/icon/miura.jpg'), this.content, true)
 
       this.content = ''
     }

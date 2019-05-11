@@ -1,11 +1,11 @@
 const users: Array<any> = [
   {
-    user: 'ナオキ',
-    image: '../assets/icon/naoki.jpg',
+    name: 'ナオキ',
+    image: require('../assets/icon/naoki.jpg'),
   },
   {
-    user: '三浦',
-    image: '../assets/icon/miura.jpg',
+    name: '三浦',
+    image: require('../assets/icon/miura.jpg'),
   }
 ]
 
