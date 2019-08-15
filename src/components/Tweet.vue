@@ -1,7 +1,7 @@
 <template lang="pug">
   v-card.card(flat :class="tweet.self ? 'self' : ''")
     v-avatar.avatar
-      v-img(:src="tweet.image" alt="avatar")
+      v-img.image(:src="tweet.image" alt="avatar")
     div.user-and-time
       span.user {{ tweet.user }}
       span.created_at {{ tweet.createdAt }}
@@ -65,6 +65,9 @@
   .avatar {
     position: absolute;
     margin: 10px 0 0 10px;
+    .image {
+      border: solid 1.5px #6F95DA;
+    }
   }
   .user-and-time {
     padding: 10px 0 0 70px;
