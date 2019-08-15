@@ -13,6 +13,8 @@ const tweets: Array<string> = [
   'おっそうだな',
   'そうだよ',
   'やりますねぇ！',
+  'は？',
+  '深い'
 ]
 
 export function getRandomTweet(): any {

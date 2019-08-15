@@ -40,7 +40,7 @@
 
     mounted(): void {
       this.initialMessage.forEach((message) => {
-        this.postTweet(this.makeTweet('tutorial', require('../assets/icon/naoki.jpg'), message, false))
+        this.postTweet(this.makeTweet('tutorial', require('../assets/icon/napoleon.jpg'), message, false))
       })
     }
 
