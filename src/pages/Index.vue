@@ -2,13 +2,7 @@
   v-container
     v-layout(text-xs-center wrap)
       v-flex(xs12)
-        v-img(
-          :src="require('../assets/logo.svg')"
-          class="my-3"
-          contain
-          height="200"
-        )
-
+        h1#title koedame
       v-flex(xs12)
         Post(@postTweet="post")
 
@@ -108,4 +102,10 @@
 </script>
 
 <style lang="scss" scoped>
+#title {
+  margin: 8px 0;
+  font-family: 'Comfortaa', cursive;
+  font-size: 56px;
+  color: #1DA1F2;
+}
 </style>
