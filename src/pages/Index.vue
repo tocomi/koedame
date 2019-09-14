@@ -1,11 +1,10 @@
 <template lang="pug">
-  v-container
+  v-container#container
     v-layout(text-xs-center wrap)
       v-flex(xs12)
         h1#title koedame
       v-flex(xs12)
         Post(@postTweet="post")
-
       v-flex(xs12)
         Tweet(v-for="tweet in tweets" :tweet="tweet" :key="tweet.content + tweet.createdAt")
 </template>
@@ -102,10 +101,13 @@
 </script>
 
 <style lang="scss" scoped>
-#title {
-  margin: 8px 0;
-  font-family: 'Comfortaa', cursive;
-  font-size: 56px;
-  color: #1DA1F2;
+#container {
+  max-width: 600px;
+  #title {
+    margin: 8px 0;
+    font-family: 'Comfortaa', cursive;
+    font-size: 56px;
+    color: #1DA1F2;
+  }
 }
 </style>
