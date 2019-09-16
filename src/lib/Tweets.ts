@@ -41,6 +41,8 @@ const tweets: Array<string> = [
   'あながち間違っていないんじゃないか',
   '冗談は顔だけにしてくれよ',
   'なんか芸術的',
+  'いつもどおりで安心した',
+  'まるで成長していない',
 ]
 
 export function getRandomTweet(): any {
