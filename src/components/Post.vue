@@ -44,7 +44,7 @@ export default class Post extends Vue {
 <style lang="scss" scoped>
 .input {
   width: 300px;
-  padding: 5px;
+  padding: 8px;
   border: 1px solid #eaeaea;
   border-radius: 10px;
   background-color: #fff;
