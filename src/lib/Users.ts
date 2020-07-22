@@ -1,4 +1,9 @@
-const users: Array<any> = [
+interface User {
+  name: string;
+  image: any;
+}
+
+const users: User[] = [
   { name: "織田信長", image: require("../assets/icon/nobunaga.jpg") },
   { name: "アメンホテプ4世", image: require("../assets/icon/amenhotep.jpg") },
   { name: "ナポレオン", image: require("../assets/icon/napoleon.jpg") },
@@ -44,6 +49,6 @@ const users: Array<any> = [
   { name: "島崎藤村", image: require("../assets/icon/toson.jpg") }
 ];
 
-export function getRandomUser(): any {
+export function getRandomUser(): User {
   return users[Math.floor(Math.random() * users.length)];
 }

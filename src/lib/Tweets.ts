@@ -1,4 +1,4 @@
-const tweets: Array<string> = [
+const tweets: string[] = [
   "草",
   "草不可避",
   "わかりみが深い",
@@ -42,6 +42,6 @@ const tweets: Array<string> = [
   "たかまる〜"
 ];
 
-export function getRandomTweet(): any {
+export function getRandomTweet(): string {
   return tweets[Math.floor(Math.random() * tweets.length)];
 }
