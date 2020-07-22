@@ -5,33 +5,29 @@
         <span>koedame</span>
       </v-toolbar-title>
       <v-spacer></v-spacer>
-      <v-btn
-        flat
-        href="https://twitter.com/tocomi0112"
-        target="_blank"
-      >
+      <v-btn flat href="https://twitter.com/tocomi0112" target="_blank">
         <span class="mr-2">@tocomi</span>
       </v-btn>
     </v-toolbar>
 
     <v-content>
-      <Index/>
+      <Index />
     </v-content>
   </v-app>
 </template>
 
 <script>
-import Index from './pages/Index'
+import Index from "./pages/Index";
 
 export default {
-  name: 'App',
+  name: "App",
   components: {
-    Index,
+    Index
   },
-  data () {
+  data() {
     return {
       //
-    }
+    };
   }
-}
+};
 </script>

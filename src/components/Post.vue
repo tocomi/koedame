@@ -9,41 +9,45 @@
 </template>
 
 <script lang="ts">
-  import { Component, Prop, Vue } from "vue-property-decorator";
-  
-  @Component
-  export default class Post extends Vue {
+import { Component, Prop, Vue } from "vue-property-decorator";
 
-    user: string = ''
-    content: string = ''
+@Component
+export default class Post extends Vue {
+  user: string = "";
+  content: string = "";
 
-    postTweet(): void {
-      if (this.content === '') {
-        return
-      }
-
-      this.$emit('postTweet', this.postUser(), require('../assets/icon/you.jpg'), this.content, true)
-
-      this.content = ''
+  postTweet(): void {
+    if (this.content === "") {
+      return;
     }
 
-    private postUser(): string {
-      if (this.user === '') {
-        return 'you'
-      }
-      return this.user
-    }
+    this.$emit(
+      "postTweet",
+      this.postUser(),
+      require("../assets/icon/you.jpg"),
+      this.content,
+      true
+    );
 
+    this.content = "";
   }
+
+  private postUser(): string {
+    if (this.user === "") {
+      return "you";
+    }
+    return this.user;
+  }
+}
 </script>
 
 <style lang="scss" scoped>
 .input {
   width: 300px;
   padding: 5px;
-  border: 1px solid #EAEAEA;
+  border: 1px solid #eaeaea;
   border-radius: 10px;
-  background-color: #FFF;
+  background-color: #fff;
   font-size: 16px;
 }
 #content {
