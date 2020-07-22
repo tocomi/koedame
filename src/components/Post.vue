@@ -1,7 +1,7 @@
 <template lang="pug">
   div#post
     div#user-area
-      input#user.input(v-model="user" placeholder="お名前")
+      input#user.input(v-model="userName" placeholder="お名前")
     div#content-area
       textarea#content.input(v-model="content" placeholder="なんでもどうぞ")
       v-btn#submit(color="info" @click="postTweet()" fab small)
@@ -13,9 +13,24 @@ import { Component, Prop, Vue } from "vue-property-decorator";
 
 @Component
 export default class Post extends Vue {
-  user: string = "";
+  // data
+  userName: string = "";
   content: string = "";
 
+  // lifecycle
+  created() {
+    if (localStorage.userName) this.userName = localStorage.userName;
+  }
+
+  // computed
+  get postUser(): string {
+    if (this.userName === "") {
+      return "you";
+    }
+    return this.userName;
+  }
+
+  // methods
   postTweet(): void {
     if (this.content === "") {
       return;
@@ -23,20 +38,14 @@ export default class Post extends Vue {
 
     this.$emit(
       "postTweet",
-      this.postUser(),
+      this.postUser,
       require("../assets/icon/you.jpg"),
       this.content,
       true
     );
 
+    if (this.userName) localStorage.userName = this.userName;
     this.content = "";
-  }
-
-  private postUser(): string {
-    if (this.user === "") {
-      return "you";
-    }
-    return this.user;
   }
 }
 </script>
