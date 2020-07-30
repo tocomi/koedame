@@ -15,13 +15,13 @@
 </template>
 
 <script lang="ts">
-import { Component, Prop, Vue } from "vue-property-decorator";
-import ReTweet from "./ReTweet.vue";
+import { Component, Prop, Vue } from 'vue-property-decorator';
+import ReTweet from './ReTweet.vue';
 
 @Component({
   components: {
-    ReTweet
-  }
+    ReTweet,
+  },
 })
 export default class Tweet extends Vue {
   @Prop() tweet!: any;

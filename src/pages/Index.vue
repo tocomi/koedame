@@ -10,35 +10,35 @@
 </template>
 
 <script lang="ts">
-import { Component, Vue } from "vue-property-decorator";
-import * as users from "../lib/Users";
-import * as tweets from "../lib/Tweets";
-import Tweet from "../components/Tweet.vue";
-import Post from "../components/Post.vue";
+import { Component, Vue } from 'vue-property-decorator';
+import * as users from '../lib/Users';
+import * as tweets from '../lib/Tweets';
+import Tweet from '../components/Tweet.vue';
+import Post from '../components/Post.vue';
 
 @Component({
   components: {
     Tweet,
-    Post
-  }
+    Post,
+  },
 })
 export default class Index extends Vue {
   tweets: Array<Object> = [];
   initialMessage: Array<string> = [
-    "勝手に周りが盛り上がってくれます",
-    "ネットには公開されないので何でも書いて大丈夫です",
-    "適当に書き込みましょう"
+    '勝手に周りが盛り上がってくれます',
+    'ネットには公開されないので何でも書いて大丈夫です',
+    '適当に書き込みましょう',
   ];
 
   mounted(): void {
     this.initialMessage.forEach(message => {
       this.postTweet(
         this.makeTweet(
-          "tutorial",
-          require("../assets/icon/napoleon.jpg"),
+          'tutorial',
+          require('../assets/icon/napoleon.jpg'),
           message,
-          false
-        )
+          false,
+        ),
       );
     });
   }
@@ -60,8 +60,8 @@ export default class Index extends Vue {
           user.image,
           tweets.getRandomTweet(),
           false,
-          reTweet
-        )
+          reTweet,
+        ),
       );
       this.deleteOldData();
 
@@ -77,7 +77,7 @@ export default class Index extends Vue {
     image: any,
     content: string,
     self: boolean,
-    reTweet: any = null
+    reTweet: any = null,
   ): Object {
     return {
       user: user,
@@ -87,7 +87,7 @@ export default class Index extends Vue {
       share: 0,
       reTweet: reTweet,
       self: self,
-      createdAt: this.makeCurrentTimeString()
+      createdAt: this.makeCurrentTimeString(),
     };
   }
 
@@ -105,26 +105,26 @@ export default class Index extends Vue {
     const current: Date = new Date();
     return (
       this.addZeroForDate(current.getHours()) +
-      ":" +
+      ':' +
       this.addZeroForDate(current.getMinutes()) +
-      ":" +
+      ':' +
       this.addZeroForDate(current.getSeconds())
     );
   }
 
   private addZeroForDate(number: number): string {
-    return ("00" + number).slice(-2);
+    return ('00' + number).slice(-2);
   }
 
   tweetRandom(): void {
     setInterval(() => {
       this.postTweet(
         this.makeTweet(
-          "hoge",
-          require("../assets/icon/naoki.jpg"),
-          "fuga",
-          false
-        )
+          'hoge',
+          require('../assets/icon/naoki.jpg'),
+          'fuga',
+          false,
+        ),
       );
       this.deleteOldData();
     }, 3000);
@@ -137,7 +137,7 @@ export default class Index extends Vue {
   max-width: 600px;
   #title {
     margin: 8px 0;
-    font-family: "Comfortaa", cursive;
+    font-family: 'Comfortaa', cursive;
     font-size: 56px;
     color: #1da1f2;
   }

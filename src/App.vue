@@ -17,17 +17,17 @@
 </template>
 
 <script>
-import Index from "./pages/Index";
+import Index from './pages/Index';
 
 export default {
-  name: "App",
+  name: 'App',
   components: {
-    Index
+    Index,
   },
   data() {
     return {
       //
     };
-  }
+  },
 };
 </script>

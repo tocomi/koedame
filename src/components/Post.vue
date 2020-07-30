@@ -9,13 +9,13 @@
 </template>
 
 <script lang="ts">
-import { Component, Prop, Vue } from "vue-property-decorator";
+import { Component, Prop, Vue } from 'vue-property-decorator';
 
 @Component
 export default class Post extends Vue {
   // data
-  userName: string = "";
-  content: string = "";
+  userName: string = '';
+  content: string = '';
 
   // lifecycle
   created() {
@@ -24,28 +24,28 @@ export default class Post extends Vue {
 
   // computed
   get postUser(): string {
-    if (this.userName === "") {
-      return "you";
+    if (this.userName === '') {
+      return 'you';
     }
     return this.userName;
   }
 
   // methods
   postTweet(): void {
-    if (this.content === "") {
+    if (this.content === '') {
       return;
     }
 
     this.$emit(
-      "postTweet",
+      'postTweet',
       this.postUser,
-      require("../assets/icon/you.jpg"),
+      require('../assets/icon/you.jpg'),
       this.content,
-      true
+      true,
     );
 
     if (this.userName) localStorage.userName = this.userName;
-    this.content = "";
+    this.content = '';
   }
 }
 </script>
