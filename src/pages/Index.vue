@@ -15,6 +15,7 @@ import * as users from '../lib/Users';
 import * as tweets from '../lib/Tweets';
 import Tweet from '../components/Tweet.vue';
 import Post from '../components/Post.vue';
+import TweetType from '../types/tweet';
 
 @Component({
   components: {
@@ -23,13 +24,15 @@ import Post from '../components/Post.vue';
   },
 })
 export default class Index extends Vue {
-  tweets: Array<Object> = [];
-  initialMessage: Array<string> = [
+  // data
+  tweets: TweetType[] = [];
+  initialMessage: string[] = [
     '勝手に周りが盛り上がってくれます',
     'ネットには公開されないので何でも書いて大丈夫です',
     '適当に書き込みましょう',
   ];
 
+  // lifecycle
   mounted(): void {
     this.initialMessage.forEach(message => {
       this.postTweet(
@@ -43,6 +46,7 @@ export default class Index extends Vue {
     });
   }
 
+  // methods
   post(user: string, image: any, content: string, self: boolean): void {
     const tweet = this.makeTweet(user, image, content, self);
     this.postTweet(tweet);
@@ -50,7 +54,7 @@ export default class Index extends Vue {
     this.deleteOldData();
   }
 
-  private setRetweet(reTweet: any): void {
+  private setRetweet(reTweet: TweetType): void {
     let loopCount = 0;
     const timerId: number = setInterval(() => {
       const user = users.getRandomUser();
@@ -78,7 +82,7 @@ export default class Index extends Vue {
     content: string,
     self: boolean,
     reTweet: any = null,
-  ): Object {
+  ): TweetType {
     return {
       user: user,
       image: image,
@@ -91,7 +95,7 @@ export default class Index extends Vue {
     };
   }
 
-  private postTweet(tweet: Object): void {
+  private postTweet(tweet: TweetType): void {
     this.tweets.unshift(tweet);
   }
 
