@@ -11,8 +11,8 @@
 
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
-import * as users from '../lib/Users';
-import * as tweets from '../lib/Tweets';
+import { getRandomUser } from '../lib/Users';
+import { getRandomTweet } from '../lib/Tweets';
 import Tweet from '../components/Tweet.vue';
 import Post from '../components/Post.vue';
 import TweetType from '../types/tweet';
@@ -57,15 +57,9 @@ export default class Index extends Vue {
   private setRetweet(reTweet: TweetType): void {
     let loopCount = 0;
     const timerId: number = setInterval(() => {
-      const user = users.getRandomUser();
+      const user = getRandomUser();
       this.postTweet(
-        this.makeTweet(
-          user.name,
-          user.image,
-          tweets.getRandomTweet(),
-          false,
-          reTweet,
-        ),
+        this.makeTweet(user.name, user.image, getRandomTweet(), false, reTweet),
       );
       this.deleteOldData();
 
