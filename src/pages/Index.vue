@@ -11,8 +11,8 @@
 
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
-import { getRandomUser } from '../lib/Users';
-import { getRandomTweet } from '../lib/Tweets';
+import { getRandomUser } from '../lib/users';
+import { getRandomTweet } from '../lib/tweets';
 import Tweet from '../components/Tweet.vue';
 import Post from '../components/Post.vue';
 import TweetType from '../types/tweet';
