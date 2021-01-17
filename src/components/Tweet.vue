@@ -1,5 +1,5 @@
 <template lang="pug">
-  v-card.card(flat :class="tweet.self ? 'self' : ''")
+  v-card.card(flat :class="tweet.self ? 'self' : ''" :id="id")
     v-avatar.avatar
       v-img.image(:src="tweet.image" alt="avatar")
     div.user-and-time
@@ -7,16 +7,19 @@
       span.created_at {{ tweet.createdAt }}
     span.content {{ tweet.content }}
     div.status
-      v-icon.favorite-icon(color="red" small @click="favorite()") favorite
+      v-icon.favorite-icon(color="red" small @click="favorite") favorite
       span.favorite {{ tweet.favorite }}
-      v-icon.share-icon(color="green" small @click="share()") repeat
+      v-icon.share-icon(color="green" small @click="share") repeat
       span.share {{ tweet.share }}
     ReTweet(:reTweet="tweet.reTweet" v-if="tweet.reTweet")
 </template>
 
 <script lang="ts">
 import { Component, Prop, Vue } from 'vue-property-decorator';
+import html2canvas from 'html2canvas';
+
 import ReTweet from './ReTweet.vue';
+import TweetType from '../types/tweet';
 
 @Component({
   components: {
@@ -24,7 +27,7 @@ import ReTweet from './ReTweet.vue';
   },
 })
 export default class Tweet extends Vue {
-  @Prop() tweet!: any;
+  @Prop() tweet!: TweetType;
 
   created() {
     let loopCount = 0;
@@ -43,12 +46,26 @@ export default class Tweet extends Vue {
     }, 100);
   }
 
+  get id(): string {
+    return `tweet${this.tweet.createdAt.split(':').join('')}`;
+  }
+
   favorite() {
     this.tweet.favorite += 1;
   }
 
-  share() {
+  async share() {
     this.tweet.share += 1;
+    const canvas = await html2canvas(document.getElementById(`${this.id}`)!);
+    document.body.appendChild(canvas);
+    const url =
+      'https://twitter.com/intent/tweet?text=' +
+      this.tweet.content +
+      '%20%23koedame' +
+      '&url=' +
+      'https://tocomi-koedame.firebaseapp.com/';
+    const option = 'status=1,width=600,height=600,top=100,left=100';
+    window.open(url, 'twitter', option);
   }
 }
 </script>

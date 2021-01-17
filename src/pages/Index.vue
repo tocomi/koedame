@@ -6,7 +6,7 @@
       v-flex(xs12)
         Post(@postTweet="post")
       v-flex(xs12)
-        Tweet(v-for="tweet in tweets" :tweet="tweet" :key="tweet.content + tweet.createdAt")
+        Tweet(v-for="(tweet, index) in tweets" :tweet="tweet" :key="tweet.content + tweet.createdAt")
 </template>
 
 <script lang="ts">
