@@ -724,6 +724,11 @@
     "@types/minimatch" "*"
     "@types/node" "*"
 
+"@types/html2canvas@^0.0.36":
+  version "0.0.36"
+  resolved "https://registry.yarnpkg.com/@types/html2canvas/-/html2canvas-0.0.36.tgz#5c7ba01ba8771b39c6eebbbde8f05885858dafa8"
+  integrity sha512-6g/TVYK5U5AyRaOj1lHVnEmlxzH21K9CRDkC0s6s3CAWLDFbwZ8s+dy0kPrhPfo0cEjIOQh3eeFtTjRBPN4Q0g==
+
 "@types/minimatch@*":
   version "3.0.3"
   resolved "https://registry.yarnpkg.com/@types/minimatch/-/minimatch-3.0.3.tgz#3dca0e3f33b200fc7d1139c0cd96c1268cadfd9d"

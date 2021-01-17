@@ -1,12 +1,13 @@
 <template lang="pug">
-  v-container#container
+  v-container.container
     v-layout(text-xs-center wrap)
       v-flex(xs12)
-        h1#title koedame
+        h1.app-title koedame
       v-flex(xs12)
         Post(@postTweet="post")
       v-flex(xs12)
-        Tweet(v-for="(tweet, index) in tweets" :tweet="tweet" :key="tweet.content + tweet.createdAt")
+        div.tweet-wrapper(v-for="(tweet, index) in tweets" :key="tweet.content + tweet.createdAt")
+          Tweet(:tweet="tweet")
 </template>
 
 <script lang="ts">
@@ -113,31 +114,22 @@ export default class Index extends Vue {
   private addZeroForDate(number: number): string {
     return ('00' + number).slice(-2);
   }
-
-  tweetRandom(): void {
-    setInterval(() => {
-      this.postTweet(
-        this.makeTweet(
-          'hoge',
-          require('../assets/icon/naoki.jpg'),
-          'fuga',
-          false,
-        ),
-      );
-      this.deleteOldData();
-    }, 3000);
-  }
 }
 </script>
 
 <style lang="scss" scoped>
-#container {
+.container {
   max-width: 600px;
-  #title {
-    margin: 8px 0;
+
+  .app-title {
+    color: #1da1f2;
     font-family: 'Comfortaa', cursive;
     font-size: 56px;
-    color: #1da1f2;
+    margin: 8px 0;
+  }
+
+  .tweet-wrapper:nth-child(n + 2) {
+    margin-top: 8px;
   }
 }
 </style>

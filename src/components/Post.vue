@@ -52,20 +52,26 @@ export default class Post extends Vue {
 
 <style lang="scss" scoped>
 .input {
-  width: 300px;
-  padding: 8px;
+  background-color: #fff;
   border: 1px solid #eaeaea;
   border-radius: 10px;
-  background-color: #fff;
   font-size: 16px;
+  padding: 8px;
+  width: 300px;
+
+  &:focus {
+    outline: none;
+  }
 }
+
 #content {
-  resize: none;
   height: 120px;
   margin: 2px 0 0 0;
+  resize: none;
 }
+
 #submit {
-  position: absolute;
   margin: 75px 0 0 -45px;
+  position: absolute;
 }
 </style>
