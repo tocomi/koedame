@@ -2,7 +2,7 @@
   div.retweet
     div.user-and-time
       span.user {{ reTweet.user }}
-      span.created_at {{ reTweet.createdAt }}
+      span.created-at {{ reTweet.createdAt }}
     span.content {{ reTweet.content }}
 </template>
 
@@ -17,16 +17,26 @@ export default class Tweet extends Vue {
 
 <style lang="scss" scoped>
 .retweet {
-  margin: 0 5px 5px 60px;
-  padding: 5px 10px;
   border: 1px solid #eeeeee;
   border-radius: 10px;
-  .user {
-    font-weight: bold;
+  margin: 0 5px 5px 60px;
+  padding: 5px 10px;
+
+  .user-and-time {
+    font-size: 12px;
+
+    .user {
+      font-weight: bold;
+    }
+
+    .created-at {
+      color: #8a8a8a;
+      margin: 0 0 0 10px;
+    }
   }
-  .created_at {
-    margin: 0 0 0 10px;
-    color: #8a8a8a;
+
+  .content {
+    font-size: 12px;
   }
 }
 </style>
